@@ -2,6 +2,8 @@
 
 Static site for VGSTUDIO and its featured game, KAIJU CORP.
 
+Live site: https://xuejunyi2002.github.io/VGStudio/
+
 ## Structure
 
 - `index.html` — landing page (loading animation, hero, featured game, footer)
