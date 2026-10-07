@@ -393,8 +393,6 @@ body.menu-open .menu-overlay {
   text-shadow: 0 0 40px rgba(226, 16, 30, 0.25);
 }
 
-.hero-split-headline h1 .accent { color: var(--c-red); }
-
 .hero-split-intro { padding-top: 16px; }
 
 .hero-split-intro p {
