@@ -14,13 +14,15 @@
   --c-gray: #948f86;
   --c-line: rgba(245, 241, 232, 0.12);
 
-  --font-display: "Anton", "Arial Narrow", sans-serif;
+  /* Big display text: headlines, section titles, menu items, stat numbers. */
+  --font-headline: "Archivo Black", "Anton", "Arial Narrow", sans-serif;
   --font-tag: "Permanent Marker", cursive;
-  --font-body: "Rubik", "Helvetica Neue", Arial, sans-serif;
-  /* Neue Haas Grotesk isn't freely licensable; "Helvetica Neue" is its closest
-     relative and renders natively on Apple devices (Neue Haas Grotesk is the
-     basis Helvetica was redigitized from), so it's the first real fallback. */
-  --font-landing: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Small text: body copy, labels, buttons, nav — everything else.
+     Neue Haas Grotesk isn't freely licensable; "Helvetica Neue" is its
+     closest relative and renders natively on Apple devices (Neue Haas
+     Grotesk is the basis Helvetica was redigitized from), so it's the
+     first real fallback. */
+  --font-body: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --nav-h: 92px;
 }
@@ -119,7 +121,7 @@ section { position: relative; }
 }
 
 .preloader-logo {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   font-size: clamp(2.2rem, 6vw, 3.6rem);
   letter-spacing: 0.06em;
   color: var(--c-white);
@@ -147,7 +149,7 @@ section { position: relative; }
 }
 
 .preloader-percent {
-  font-family: var(--font-display);
+  font-weight: 700;
   letter-spacing: 0.15em;
   font-size: 0.85rem;
   color: var(--c-gray);
@@ -199,7 +201,7 @@ body.is-loaded #preloader {
 
 .topbar-logo-fallback {
   display: none;
-  font-family: var(--font-display);
+  font-weight: 700;
   color: var(--c-white);
   font-size: 1.3rem;
   letter-spacing: 0.04em;
@@ -210,7 +212,7 @@ body.is-loaded #preloader {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-family: var(--font-display);
+  font-weight: 700;
   font-size: clamp(0.6rem, 1.6vw, 0.78rem);
   letter-spacing: 0.25em;
   color: var(--c-white);
@@ -329,7 +331,7 @@ body.menu-open .menu-overlay {
   gap: 20px;
   padding: 20px 4px;
   border-bottom: 1px solid var(--c-line);
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   font-size: clamp(1.8rem, 4.2vw, 2.8rem);
   letter-spacing: 0.02em;
   color: var(--c-white);
@@ -384,8 +386,8 @@ body.menu-open .menu-overlay {
 }
 
 .hero-split-headline h1 {
-  font-family: "Archivo Black", var(--font-display);
-  font-size: clamp(2.6rem, 7vw, 6rem);
+  font-family: var(--font-headline);
+  font-size: clamp(2.2rem, 5.8vw, 5rem);
   line-height: 0.95;
   letter-spacing: 0.01em;
   margin: 0;
@@ -393,10 +395,11 @@ body.menu-open .menu-overlay {
   text-shadow: 0 0 40px rgba(226, 16, 30, 0.25);
 }
 
+.hero-split-headline h1 .accent { color: var(--c-red); }
+
 .hero-split-intro { padding-top: 16px; }
 
 .hero-split-intro p {
-  font-family: var(--font-landing);
   font-size: 1rem;
   letter-spacing: 0.01em;
   line-height: 1.7;
@@ -444,7 +447,7 @@ body.menu-open .menu-overlay {
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 .eyebrow {
-  font-family: var(--font-display);
+  font-weight: 700;
   letter-spacing: 0.3em;
   font-size: 0.75rem;
   color: var(--c-red-bright);
@@ -452,7 +455,7 @@ body.menu-open .menu-overlay {
 }
 
 .section-title {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   font-size: clamp(2rem, 5vw, 3.2rem);
   margin: 0 0 20px;
   letter-spacing: 0.02em;
@@ -495,7 +498,7 @@ body.menu-open .menu-overlay {
 }
 
 .game-logo {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   font-size: clamp(2.6rem, 7vw, 4.6rem);
   line-height: 0.92;
   letter-spacing: 0.02em;
@@ -526,7 +529,7 @@ body.menu-open .menu-overlay {
 }
 
 .btn {
-  font-family: var(--font-display);
+  font-weight: 700;
   letter-spacing: 0.08em;
   font-size: 0.9rem;
   padding: 16px 30px;
@@ -605,14 +608,14 @@ body.menu-open .menu-overlay {
 .card:hover::before { transform: scaleY(1); }
 
 .card-icon {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   font-size: 1.6rem;
   color: var(--c-red);
   margin-bottom: 16px;
 }
 
 .card h3 {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   letter-spacing: 0.03em;
   font-size: 1.15rem;
   margin: 0 0 10px;
@@ -637,7 +640,7 @@ body.menu-open .menu-overlay {
 }
 
 .game-hero-logo {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   font-size: clamp(3rem, 12vw, 8rem);
   line-height: 0.9;
   margin: 0;
@@ -663,7 +666,7 @@ body.menu-open .menu-overlay {
   text-transform: uppercase;
 }
 
-.meta-row strong { color: var(--c-white); display: block; font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-row strong { color: var(--c-white); display: block; font-weight: 700; font-size: 1rem; letter-spacing: 0.04em; margin-bottom: 4px; }
 
 .concept-gallery {
   display: grid;
@@ -692,7 +695,7 @@ body.menu-open .menu-overlay {
 
 .concept-tile span {
   position: relative;
-  font-family: var(--font-display);
+  font-weight: 700;
   letter-spacing: 0.1em;
   font-size: 0.75rem;
   color: var(--c-gray);
@@ -705,7 +708,7 @@ body.menu-open .menu-overlay {
 }
 
 .cta-band h2 {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   margin: 0 0 26px;
   color: var(--c-white);
@@ -725,7 +728,7 @@ body.menu-open .menu-overlay {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-display);
+  font-weight: 700;
   letter-spacing: 0.08em;
   font-size: 0.85rem;
   color: var(--c-gray);
@@ -766,7 +769,7 @@ body.menu-open .menu-overlay {
 }
 
 .stat-num {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   font-size: 2.6rem;
   color: var(--c-red);
   margin: 0;
@@ -795,14 +798,14 @@ body.menu-open .menu-overlay {
 }
 
 .dept-card .glyph {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   font-size: 2rem;
   color: var(--c-red);
   margin-bottom: 12px;
 }
 
 .dept-card h4 {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   letter-spacing: 0.05em;
   margin: 0 0 6px;
   font-size: 1rem;
@@ -828,13 +831,13 @@ body.menu-open .menu-overlay {
 }
 
 .values-list .idx {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   color: var(--c-red);
   font-size: 1.6rem;
 }
 
 .values-list h4 {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   letter-spacing: 0.03em;
   margin: 0 0 6px;
   font-size: 1.15rem;
@@ -861,7 +864,7 @@ body.menu-open .menu-overlay {
 }
 
 .footer-brand {
-  font-family: var(--font-display);
+  font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--c-gray);
   font-size: 0.9rem;
