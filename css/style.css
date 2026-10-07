@@ -126,8 +126,8 @@ html::-webkit-scrollbar { display: none; }
 
 .preloader-logo img {
   display: block;
-  margin: 0 auto;
-  width: clamp(140px, 22vw, 220px);
+  margin: 0 auto 8px;
+  width: clamp(96px, 15vw, 150px);
   height: auto;
 }
 
