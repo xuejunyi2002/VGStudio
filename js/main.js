@@ -1,4 +1,4 @@
-/* VGSTUDIO — shared site behavior: preloader, ember background, nav, reveals */
+/* Very Good Studio Inc. — shared site behavior: preloader, ember background, nav, reveals */
 
 (function () {
   "use strict";

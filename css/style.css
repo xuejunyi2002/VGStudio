@@ -1,5 +1,5 @@
 /* ==========================================================================
-   VGSTUDIO — Game Studio Website
+   Very Good Studio Inc. — Game Studio Website
    Palette: red / black / white — anime / graffiti energy
    ========================================================================== */
 
@@ -200,12 +200,13 @@ body.is-loaded #preloader {
 
 .nav-brand {
   font-family: var(--font-display);
-  font-size: 1.35rem;
-  letter-spacing: 0.08em;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  letter-spacing: 0.04em;
   color: var(--c-white);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  white-space: nowrap;
 }
 
 .nav-brand .dot { color: var(--c-red); }
@@ -881,10 +882,19 @@ body.is-loaded #preloader {
     padding: 26px 32px;
     gap: 20px;
     border-bottom: 1px solid var(--c-line);
-    transform: translateY(-120%);
-    transition: transform 0.3s ease;
+    transform: translateY(-16px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease, visibility 0s linear 0.25s;
   }
-  .nav-links.is-open { transform: translateY(0); }
+  .nav-links.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
   .nav-toggle { display: flex; }
   .nav-social { display: none; }
   .grid-3, .grid-2, .dept-grid, .concept-gallery { grid-template-columns: 1fr; }

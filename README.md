@@ -1,6 +1,6 @@
-# VGSTUDIO Website
+# Very Good Studio Inc. Website
 
-Static site for VGSTUDIO and its featured game, KAIJU CORP.
+Static site for Very Good Studio Inc. and its featured game, KAIJU CORP.
 
 Live site: https://xuejunyi2002.github.io/VGStudio/
 
@@ -29,4 +29,3 @@ Then open `http://localhost:8000`.
 - Real Instagram / Discord / Steam URLs (currently placeholders in the nav and footer of every page, and the Steam links in the buttons)
 - Hero background video at `assets/video/hero-bg.mp4`
 - Concept art images in `game.html` (currently styled placeholder tiles)
-- Studio name (currently "VGSTUDIO") if you'd like something else
