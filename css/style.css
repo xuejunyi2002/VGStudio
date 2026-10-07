@@ -17,14 +17,26 @@
   /* Big display text: headlines, section titles, menu items, stat numbers. */
   --font-headline: "Archivo Black", "Anton", "Arial Narrow", sans-serif;
   --font-tag: "Permanent Marker", cursive;
-  /* Small text: body copy, labels, buttons, nav — everything else.
-     Neue Haas Grotesk isn't freely licensable; "Helvetica Neue" is its
-     closest relative and renders natively on Apple devices (Neue Haas
-     Grotesk is the basis Helvetica was redigitized from), so it's the
-     first real fallback. */
-  --font-body: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Small text: body copy, labels, buttons, nav — everything else. */
+  --font-body: "Clarity City", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --nav-h: 92px;
+}
+
+@font-face {
+  font-family: "Clarity City";
+  src: url("../assets/fonts/ClarityCity-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clarity City";
+  src: url("../assets/fonts/ClarityCity-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 * { box-sizing: border-box; }

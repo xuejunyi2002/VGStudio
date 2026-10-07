@@ -12,9 +12,10 @@ Live site: https://xuejunyi2002.github.io/VGStudio/
 - `css/style.css` — all styling
 - `js/main.js` — preloader, menu overlay, scroll reveals, hero ember background, video fallbacks
 - `assets/img/IMG_9936(1).PNG` — studio logo, shown in the topbar badge and preloader on every page
-- `assets/img/DSCF5137.JPG` / `assets/img/DSCF5141.JPG` — studio photos in the staggered collage on the landing page (not committed yet — the section degrades gracefully, just showing the text, until they're added)
+- `assets/img/DSCF5137.JPG` / `assets/img/DSCF5141.JPG` — studio photos in the staggered collage on the landing page
 - `assets/video/playtest.MOV` — original gameplay clip (HEVC), kept as the source file but not referenced by any page, since HEVC/.MOV isn't reliably playable outside Safari
 - `assets/video/playtest.mp4` / `assets/video/playtest.webm` — H.264 and VP9 transcodes of the clip above, used (in that order, webm first) in the hero video banner (index) and the full-screen menu overlay (all pages)
+- `assets/fonts/ClarityCity-Regular.woff2` / `ClarityCity-Bold.woff2` — self-hosted, used for all "small" text site-wide (`--font-body`): body copy, labels, buttons, nav. Not on Google Fonts, so pulled from VMware's open-source npm package (`@cds/city`, SIL OFL-1.1, see `ClarityCity-LICENSE.txt`) and converted from TTF to WOFF2
 - `assets/img/` — additional gallery images go here
 
 The topbar's hamburger button opens a full-screen menu overlay (`.menu-overlay`) with the site nav and social links; there's no longer an inline desktop nav — the hamburger is the only navigation, on every breakpoint.
