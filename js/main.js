@@ -107,6 +107,16 @@
     });
   }
 
+  /* ---------------- Photo fallback ---------------- */
+  // Hides any content photo that fails to load instead of leaving a broken-image icon.
+  function setupPhotoFallback() {
+    document.querySelectorAll(".about-teaser-photos img").forEach(function (img) {
+      function hide() { img.style.display = "none"; }
+      if (img.complete && img.naturalWidth === 0) hide();
+      else img.addEventListener("error", hide);
+    });
+  }
+
   /* ---------------- Video fallback ---------------- */
   // Hides any <video> that fails to load or has no playable source, so a
   // missing/unsupported asset (e.g. an unconverted .MOV) never leaves a
@@ -190,6 +200,7 @@
     setupMenu();
     setupReveal();
     setupLogoFallback();
+    setupPhotoFallback();
     setupVideos();
     setupEmbers();
   });

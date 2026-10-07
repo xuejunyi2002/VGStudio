@@ -11,7 +11,8 @@ Live site: https://xuejunyi2002.github.io/VGStudio/
 - `about.html` — studio / team page
 - `css/style.css` — all styling
 - `js/main.js` — preloader, menu overlay, scroll reveals, hero ember background, video fallbacks
-- `assets/img/IMG_9936(1).PNG` — studio logo, shown in the topbar badge on every page
+- `assets/img/IMG_9936(1).PNG` — studio logo, shown in the topbar badge and preloader on every page
+- `assets/img/DSCF5137.JPG` / `assets/img/DSCF5141.JPG` — studio photos in the staggered collage on the landing page (not committed yet — the section degrades gracefully, just showing the text, until they're added)
 - `assets/video/playtest.MOV` — original gameplay clip (HEVC), kept as the source file but not referenced by any page, since HEVC/.MOV isn't reliably playable outside Safari
 - `assets/video/playtest.mp4` / `assets/video/playtest.webm` — H.264 and VP9 transcodes of the clip above, used (in that order, webm first) in the hero video banner (index) and the full-screen menu overlay (all pages)
 - `assets/img/` — additional gallery images go here

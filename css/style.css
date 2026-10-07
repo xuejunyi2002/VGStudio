@@ -477,6 +477,48 @@ body.menu-open .menu-overlay {
 }
 
 /* ==========================================================================
+   Studio Teaser (index)
+   ========================================================================== */
+
+.about-teaser-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-teaser-photos { position: relative; }
+
+.about-teaser-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: var(--c-black-card);
+}
+
+.about-teaser-photos .photo-a {
+  width: 72%;
+  aspect-ratio: 4 / 5;
+}
+
+.about-teaser-photos .photo-b {
+  position: relative;
+  z-index: 1;
+  width: 44%;
+  aspect-ratio: 1 / 1;
+  margin: -64px 0 0 44%;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+.about-teaser-text p {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.5;
+  color: var(--c-white);
+  margin: 0;
+}
+
+/* ==========================================================================
    Featured Game
    ========================================================================== */
 
@@ -923,6 +965,8 @@ body.menu-open .menu-overlay {
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .dept-grid { grid-template-columns: repeat(2, 1fr); }
   .concept-gallery { grid-template-columns: repeat(2, 1fr); }
+  .about-teaser-grid { grid-template-columns: 1fr; gap: 36px; }
+  .about-teaser-photos { max-width: 420px; }
 }
 
 @media (max-width: 760px) {
@@ -931,6 +975,7 @@ body.menu-open .menu-overlay {
   .menu-overlay-panel { padding: 110px 24px 40px; }
   .hero-split-inner { grid-template-columns: 1fr; gap: 28px; }
   .hero-split-intro { padding-top: 0; }
+  .about-teaser-photos .photo-b { margin: -40px 0 0 38%; }
 }
 
 @media (max-width: 480px) {
