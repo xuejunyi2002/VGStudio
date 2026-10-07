@@ -496,7 +496,7 @@ body.menu-open .menu-overlay {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: start;
 }
 
 .about-teaser-photos { position: relative; }
