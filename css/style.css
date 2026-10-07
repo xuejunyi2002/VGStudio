@@ -55,10 +55,9 @@ section { position: relative; }
 
 ::selection { background: var(--c-red); color: var(--c-white); }
 
-/* scrollbar */
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--c-black); }
-::-webkit-scrollbar-thumb { background: var(--c-red-dark); border-radius: 6px; }
+/* scrollbar: hidden, scrolling still works */
+html { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar { display: none; }
 
 /* ==========================================================================
    Preloader
@@ -342,7 +341,7 @@ body.menu-open .menu-overlay {
   gap: 20px;
   padding: 20px 4px;
   border-bottom: 1px solid var(--c-line);
-  font-family: var(--font-headline);
+  font-family: "Anton", "Arial Narrow", sans-serif;
   font-size: clamp(1.8rem, 4.2vw, 2.8rem);
   letter-spacing: 0.02em;
   color: var(--c-white);
@@ -403,7 +402,6 @@ body.menu-open .menu-overlay {
   letter-spacing: 0.01em;
   margin: 0;
   color: var(--c-white);
-  text-shadow: 0 0 40px rgba(226, 16, 30, 0.25);
 }
 
 .hero-split-headline h1 .accent { color: var(--c-red); }
