@@ -121,15 +121,26 @@ section { position: relative; }
 }
 
 .preloader-logo {
-  font-family: var(--font-headline);
-  font-size: clamp(2.2rem, 6vw, 3.6rem);
-  letter-spacing: 0.06em;
-  color: var(--c-white);
   position: relative;
   animation: glitch-jitter 3.2s infinite;
 }
 
-.preloader-logo span { color: var(--c-red); }
+.preloader-logo img {
+  display: block;
+  margin: 0 auto;
+  width: clamp(140px, 22vw, 220px);
+  height: auto;
+}
+
+.preloader-logo-fallback {
+  display: none;
+  font-family: var(--font-headline);
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  letter-spacing: 0.06em;
+  color: var(--c-white);
+}
+
+.preloader-logo-fallback span { color: var(--c-red); }
 
 .preloader-bar {
   margin: 28px auto 12px;

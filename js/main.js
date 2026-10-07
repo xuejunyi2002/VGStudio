@@ -91,7 +91,7 @@
   /* ---------------- Logo fallback ---------------- */
   // Shows a text fallback in the topbar badge if the logo image is missing/broken.
   function setupLogoFallback() {
-    document.querySelectorAll(".topbar-logo img").forEach(function (img) {
+    document.querySelectorAll(".topbar-logo img, .preloader-logo img").forEach(function (img) {
       function showFallback() {
         img.style.display = "none";
         var fallback = img.nextElementSibling;
