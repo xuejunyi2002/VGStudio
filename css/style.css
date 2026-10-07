@@ -17,6 +17,10 @@
   --font-display: "Anton", "Arial Narrow", sans-serif;
   --font-tag: "Permanent Marker", cursive;
   --font-body: "Rubik", "Helvetica Neue", Arial, sans-serif;
+  /* Neue Haas Grotesk isn't freely licensable; "Helvetica Neue" is its closest
+     relative and renders natively on Apple devices (Neue Haas Grotesk is the
+     basis Helvetica was redigitized from), so it's the first real fallback. */
+  --font-landing: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --nav-h: 92px;
 }
@@ -179,27 +183,25 @@ body.is-loaded #preloader {
   padding: 18px 24px;
 }
 
-.topbar-logo,
-.topbar-menu-btn {
-  width: 56px;
-  height: 56px;
+.topbar-logo {
+  width: 72px;
+  height: 72px;
   flex-shrink: 0;
-  background: var(--c-black-card);
-  border: 1px solid var(--c-line);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease;
 }
 
-.topbar-logo { padding: 10px; transition: border-color 0.2s ease; }
-.topbar-logo:hover { border-color: var(--c-red); }
+.topbar-logo:hover { transform: scale(1.06); }
 .topbar-logo img { width: 100%; height: 100%; object-fit: contain; }
 
 .topbar-logo-fallback {
   display: none;
   font-family: var(--font-display);
   color: var(--c-white);
-  font-size: 1rem;
+  font-size: 1.3rem;
   letter-spacing: 0.04em;
 }
 
@@ -216,22 +218,30 @@ body.is-loaded #preloader {
 }
 
 .topbar-menu-btn {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background: var(--c-white);
+  border: none;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 6px;
   cursor: pointer;
-  border-width: 1px;
-  border-style: solid;
-  transition: border-color 0.2s ease;
+  transition: background 0.2s ease;
 }
 
-.topbar-menu-btn:hover { border-color: var(--c-red); }
+.topbar-menu-btn:hover { background: var(--c-red); }
 
 .topbar-menu-btn span {
   width: 22px;
   height: 2px;
-  background: var(--c-white);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  background: var(--c-black);
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.2s ease;
 }
+
+.topbar-menu-btn:hover span { background: var(--c-white); }
 
 body.menu-open .topbar-menu-btn span:nth-child(1) { transform: translateY(4px) rotate(45deg); }
 body.menu-open .topbar-menu-btn span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
@@ -296,16 +306,16 @@ body.menu-open .menu-overlay {
   right: 24px;
   width: 56px;
   height: 56px;
-  background: var(--c-black-card);
-  border: 1px solid var(--c-line);
-  color: var(--c-white);
+  background: var(--c-white);
+  border: none;
+  color: var(--c-black);
   font-size: 1.6rem;
   line-height: 1;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.menu-close:hover { border-color: var(--c-red); color: var(--c-red); }
+.menu-close:hover { background: var(--c-red); color: var(--c-white); }
 
 .menu-list {
   display: flex;
@@ -333,8 +343,7 @@ body.menu-open .menu-overlay {
   color: var(--c-gray);
 }
 
-.menu-list a:hover,
-.menu-list a.is-active {
+.menu-list a:hover {
   color: var(--c-red);
   padding-left: 16px;
 }
@@ -389,12 +398,11 @@ body.menu-open .menu-overlay {
 .hero-split-intro { padding-top: 16px; }
 
 .hero-split-intro p {
-  font-family: var(--font-display);
-  font-size: 0.82rem;
-  letter-spacing: 0.04em;
+  font-family: var(--font-landing);
+  font-size: 1rem;
+  letter-spacing: 0.01em;
   line-height: 1.7;
-  text-transform: uppercase;
-  color: var(--c-gray);
+  color: var(--c-white);
   margin: 0;
 }
 

@@ -61,12 +61,6 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") closeMenu();
     });
-
-    // highlight active link
-    var path = location.pathname.split("/").pop() || "index.html";
-    overlay.querySelectorAll("a[data-page]").forEach(function (a) {
-      if (a.getAttribute("data-page") === path) a.classList.add("is-active");
-    });
   }
 
   /* ---------------- Scroll reveal ---------------- */
