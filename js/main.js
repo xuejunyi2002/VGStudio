@@ -34,34 +34,37 @@
     requestAnimationFrame(tick);
   }
 
-  /* ---------------- Nav ---------------- */
-  function setupNav() {
-    var nav = document.querySelector(".site-nav");
-    var toggle = document.querySelector(".nav-toggle");
-    var links = document.querySelector(".nav-links");
+  /* ---------------- Menu overlay ---------------- */
+  function setupMenu() {
+    var btn = document.querySelector(".topbar-menu-btn");
+    var overlay = document.querySelector(".menu-overlay");
+    var closeBtn = document.querySelector(".menu-close");
+    if (!btn || !overlay) return;
 
-    function onScroll() {
-      if (!nav) return;
-      if (window.scrollY > 40) nav.classList.add("is-scrolled");
-      else nav.classList.remove("is-scrolled");
+    function openMenu() {
+      document.body.classList.add("menu-open");
+      btn.setAttribute("aria-expanded", "true");
     }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    function closeMenu() {
+      document.body.classList.remove("menu-open");
+      btn.setAttribute("aria-expanded", "false");
+    }
 
-    if (toggle && links) {
-      toggle.addEventListener("click", function () {
-        links.classList.toggle("is-open");
-      });
-      links.querySelectorAll("a").forEach(function (a) {
-        a.addEventListener("click", function () {
-          links.classList.remove("is-open");
-        });
-      });
-    }
+    btn.addEventListener("click", function () {
+      if (document.body.classList.contains("menu-open")) closeMenu();
+      else openMenu();
+    });
+    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+    overlay.querySelectorAll("a[data-page]").forEach(function (a) {
+      a.addEventListener("click", closeMenu);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeMenu();
+    });
 
     // highlight active link
     var path = location.pathname.split("/").pop() || "index.html";
-    document.querySelectorAll(".nav-links a[data-page]").forEach(function (a) {
+    overlay.querySelectorAll("a[data-page]").forEach(function (a) {
       if (a.getAttribute("data-page") === path) a.classList.add("is-active");
     });
   }
@@ -91,20 +94,42 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---------------- Hero video fallback ---------------- */
-  function setupHeroVideo() {
-    var video = document.querySelector(".hero-video");
-    if (!video) return;
-    video.addEventListener("canplay", function () {
-      video.classList.add("is-ready");
+  /* ---------------- Logo fallback ---------------- */
+  // Shows a text fallback in the topbar badge if the logo image is missing/broken.
+  function setupLogoFallback() {
+    document.querySelectorAll(".topbar-logo img").forEach(function (img) {
+      function showFallback() {
+        img.style.display = "none";
+        var fallback = img.nextElementSibling;
+        if (fallback) fallback.style.display = "block";
+      }
+      // A 404 can resolve before this script runs, so the "error" event may
+      // already have fired — check the already-failed state first.
+      if (img.complete && img.naturalWidth === 0) {
+        showFallback();
+      } else {
+        img.addEventListener("error", showFallback);
+      }
     });
-    video.addEventListener("error", function () {
-      video.style.display = "none";
+  }
+
+  /* ---------------- Video fallback ---------------- */
+  // Hides any <video> that fails to load or has no playable source, so a
+  // missing/unsupported asset (e.g. an unconverted .MOV) never leaves a
+  // broken black box on the page.
+  function setupVideos() {
+    document.querySelectorAll("video").forEach(function (video) {
+      function hide() { video.style.display = "none"; }
+      video.addEventListener("canplay", function () {
+        video.classList.add("is-ready");
+      });
+      video.addEventListener("error", hide);
+      var sources = video.querySelectorAll("source");
+      var hasSrc = Array.prototype.some.call(sources, function (s) {
+        return s.getAttribute("src");
+      });
+      if (!hasSrc || video.error) hide();
     });
-    // if there's no usable source, hide gracefully
-    if (!video.querySelector("source") || !video.querySelector("source").getAttribute("src")) {
-      video.style.display = "none";
-    }
   }
 
   /* ---------------- Ember particle background ---------------- */
@@ -168,9 +193,10 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     runPreloader();
-    setupNav();
+    setupMenu();
     setupReveal();
-    setupHeroVideo();
+    setupLogoFallback();
+    setupVideos();
     setupEmbers();
   });
 })();
