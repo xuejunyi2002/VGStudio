@@ -604,7 +604,9 @@ body.menu-open .menu-overlay {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, var(--c-black-soft) 0%, rgba(20, 18, 16, 0.5) 18%, rgba(20, 18, 16, 0.5) 82%, var(--c-black-soft) 100%);
+  background:
+    linear-gradient(180deg, var(--c-black-soft) 0%, transparent 22%, transparent 78%, var(--c-black-soft) 100%),
+    linear-gradient(90deg, transparent 0%, transparent 34%, rgba(20, 18, 16, 0.6) 50%, var(--c-black-soft) 70%, var(--c-black-soft) 100%);
   z-index: 0;
 }
 
@@ -643,7 +645,6 @@ body.menu-open .menu-overlay {
 
 .featured-info {
   padding: 44px;
-  background: var(--c-black-soft);
   display: flex;
   flex-direction: column;
   justify-content: center;
