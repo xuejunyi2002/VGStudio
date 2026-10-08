@@ -492,6 +492,8 @@ body.menu-open .menu-overlay {
    Studio Teaser (index)
    ========================================================================== */
 
+.about-teaser { overflow: hidden; }
+
 .about-teaser-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
