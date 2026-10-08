@@ -21,7 +21,8 @@ Live site: https://xuejunyi2002.github.io/VGStudio/
 - `assets/video/hero video.mp4` / `assets/video/hero-video.webm` — background video for the game.html hero (H.264 source + VP9 transcode, webm first)
 - `assets/img/game1.jpg` … `game6.jpg` — screenshots in the game.html gallery
 - `assets/img/background.jpg` — poster art used as a cover background on the game.html CTA band and overview section
-- `assets/img/team1.JPG`, `team2.png` … `team5.png` — team snapshots in the scattered photo collage at the top of about.html (re-encoded as compressed JPEGs on upload — the originals from the camera/export were 6–22MB each; `team2–5.png` keep the `.png` extension but are JPEG-encoded under the hood, same as `logo.jpg`)
+- `assets/img/5700.jpg` — poster art used as the cover background on the index.html Featured Game section (re-encoded from 6.4MB/8000px down to ~430KB/2200px wide)
+- `assets/img/team1.JPG`, `team2.png` … `team5.png` — team snapshots in the overlapping photo collage at the top of about.html, with `team1.JPG` as the large focal photo (re-encoded as compressed JPEGs on upload — the originals from the camera/export were 6–22MB each; `team2–5.png` keep the `.png` extension but are JPEG-encoded under the hood, same as `logo.jpg`)
 - `assets/img/` — additional gallery images go here
 
 The topbar's hamburger button opens a full-screen menu overlay (`.menu-overlay`) with the site nav and social links; there's no longer an inline desktop nav — the hamburger is the only navigation, on every breakpoint.
@@ -39,6 +40,8 @@ Then open `http://localhost:8000`.
 ## Things to swap in before launch
 
 - Real Instagram / Discord URLs (currently placeholders in the menu overlay and footer of every page) — Steam links are already live at https://store.steampowered.com/app/5256090/Kaiju_Corp/
+- Every team member's LinkedIn button on about.html links to `#` — need each person's real LinkedIn URL
+- Every team member's avatar on about.html is a placeholder circle with a generic person icon — swap in real headshots when available (`.member-avatar` in `css/style.css`)
 
 If a background video clip is ever replaced, regenerate both transcodes from the new source, e.g.:
 
