@@ -1098,6 +1098,12 @@ body.menu-open .menu-overlay {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.member-avatar:hover {
+  transform: scale(1.12) translateY(-4px);
+  box-shadow: 0 14px 30px rgba(226, 16, 30, 0.4);
 }
 
 .member-avatar span {
