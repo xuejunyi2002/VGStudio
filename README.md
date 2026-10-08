@@ -13,6 +13,7 @@ Live site: https://xuejunyi2002.github.io/VGStudio/
 - `js/main.js` — preloader, menu overlay, scroll reveals, hero ember background, video fallbacks
 - `assets/img/IMG_9936(1).PNG` — studio logo, shown in the topbar badge and preloader on every page
 - `assets/img/DSCF5137.JPG` / `assets/img/DSCF5141.JPG` — studio photos in the staggered collage on the landing page
+- `assets/img/Main_Capsule(1).png` — KAIJU CORP capsule art, shown in the Featured Game card on the landing page (not committed yet — the card degrades gracefully, just showing the text, until it's added)
 - `assets/video/playtest.MOV` — original gameplay clip (HEVC), kept as the source file but not referenced by any page, since HEVC/.MOV isn't reliably playable outside Safari
 - `assets/video/playtest.mp4` / `assets/video/playtest.webm` — H.264 and VP9 transcodes of the clip above, used (in that order, webm first) in the hero video banner (index) and the full-screen menu overlay (all pages)
 - `assets/fonts/ClarityCity-Regular.woff2` / `ClarityCity-Bold.woff2` — self-hosted, used for all "small" text site-wide (`--font-body`): body copy, labels, buttons, nav. Not on Google Fonts, so pulled from VMware's open-source npm package (`@cds/city`, SIL OFL-1.1, see `ClarityCity-LICENSE.txt`) and converted from TTF to WOFF2
@@ -32,7 +33,7 @@ Then open `http://localhost:8000`.
 
 ## Things to swap in before launch
 
-- Real Instagram / Discord / Steam URLs (currently placeholders in the menu overlay and footer of every page, and the Steam links in the buttons)
+- Real Instagram / Discord URLs (currently placeholders in the menu overlay and footer of every page) — Steam links are already live at https://store.steampowered.com/app/5256090/Kaiju_Corp/
 - Concept art images in `game.html` (currently styled placeholder tiles)
 
 If the gameplay clip is ever replaced, regenerate both transcodes from the new source, e.g.:
