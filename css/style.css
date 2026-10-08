@@ -543,10 +543,10 @@ body.menu-open .menu-overlay {
 
 .featured-bg-splatter {
   position: absolute;
-  top: -20%;
+  top: 0;
+  bottom: 0;
   right: -10%;
   width: 60%;
-  height: 140%;
   background: var(--c-red);
   opacity: 0.08;
   clip-path: polygon(30% 0%, 100% 10%, 90% 100%, 20% 90%, 0% 40%);
