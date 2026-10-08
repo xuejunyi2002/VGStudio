@@ -596,7 +596,7 @@ body.menu-open .menu-overlay {
 
 .featured-game {
   position: relative;
-  background: var(--c-black-soft) url("../assets/img/Event_Cover_Imagine_2(1).png") center 30% / cover no-repeat;
+  background: var(--c-black-soft) url("../assets/img/5700.jpg") center 35% / cover no-repeat;
   overflow: hidden;
 }
 
@@ -606,7 +606,7 @@ body.menu-open .menu-overlay {
   inset: 0;
   background:
     linear-gradient(180deg, var(--c-black-soft) 0%, transparent 22%, transparent 78%, var(--c-black-soft) 100%),
-    linear-gradient(90deg, transparent 0%, transparent 34%, rgba(20, 18, 16, 0.6) 50%, var(--c-black-soft) 70%, var(--c-black-soft) 100%);
+    linear-gradient(90deg, var(--c-black-soft) 0%, var(--c-black-soft) 30%, rgba(20, 18, 16, 0.6) 50%, transparent 66%, transparent 100%);
   z-index: 0;
 }
 
@@ -644,10 +644,19 @@ body.menu-open .menu-overlay {
 }
 
 .featured-info {
+  position: relative;
   padding: 44px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.featured-info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, var(--c-black-soft) 18%, var(--c-black-soft) 100%);
+  z-index: -1;
 }
 
 .game-logo {
