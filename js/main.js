@@ -136,6 +136,56 @@
     });
   }
 
+  /* ---------------- Scroll effects: topbar solidify, progress bar, parallax ---------------- */
+  function setupScrollEffects() {
+    var topbar = document.querySelector(".topbar");
+    var progressBar = document.querySelector(".scroll-progress");
+    var parallaxEls = Array.prototype.slice.call(document.querySelectorAll("[data-parallax]"));
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!topbar && !progressBar && !parallaxEls.length) return;
+
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var scrollTop = window.scrollY;
+
+      if (topbar) {
+        if (scrollTop > 40) topbar.classList.add("is-scrolled");
+        else topbar.classList.remove("is-scrolled");
+      }
+
+      if (progressBar) {
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = pct + "%";
+      }
+
+      if (parallaxEls.length && !reduceMotion) {
+        var vh = window.innerHeight;
+        parallaxEls.forEach(function (el) {
+          var rect = el.getBoundingClientRect();
+          var speed = parseFloat(el.getAttribute("data-parallax")) || 0.1;
+          var scale = parseFloat(el.getAttribute("data-parallax-scale")) || 1;
+          var center = rect.top + rect.height / 2;
+          var offset = (center - vh / 2) * speed;
+          el.style.transform = "translateY(" + offset.toFixed(1) + "px) scale(" + scale + ")";
+        });
+      }
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+  }
+
   /* ---------------- Ember particle background ---------------- */
   function setupEmbers() {
     var canvas = document.querySelector(".hero-embers");
@@ -202,6 +252,7 @@
     setupLogoFallback();
     setupPhotoFallback();
     setupVideos();
+    setupScrollEffects();
     setupEmbers();
   });
 })();
