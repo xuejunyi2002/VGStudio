@@ -20,6 +20,8 @@ Live site: https://xuejunyi2002.github.io/VGStudio/
 - `assets/img/logo.jpg` — KAIJU CORP title logo, shown in the game.html hero
 - `assets/video/hero video.mp4` / `assets/video/hero-video.webm` — background video for the game.html hero (H.264 source + VP9 transcode, webm first)
 - `assets/img/game1.jpg` … `game6.jpg` — screenshots in the game.html gallery
+- `assets/img/background.jpg` — poster art used as a cover background on the game.html CTA band and overview section
+- `assets/img/team1.JPG`, `team2.png` … `team5.png` — team snapshots in the scattered photo collage at the top of about.html (re-encoded as compressed JPEGs on upload — the originals from the camera/export were 6–22MB each; `team2–5.png` keep the `.png` extension but are JPEG-encoded under the hood, same as `logo.jpg`)
 - `assets/img/` — additional gallery images go here
 
 The topbar's hamburger button opens a full-screen menu overlay (`.menu-overlay`) with the site nav and social links; there's no longer an inline desktop nav — the hamburger is the only navigation, on every breakpoint.

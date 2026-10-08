@@ -259,6 +259,7 @@ body.is-loaded #preloader {
   letter-spacing: 0.25em;
   color: var(--c-white);
   white-space: nowrap;
+  text-shadow: 0 1px 6px rgba(10, 9, 8, 0.65);
 }
 
 .topbar-menu-btn {
@@ -534,6 +535,15 @@ body.menu-open .menu-overlay {
   max-width: 640px;
   font-size: 1.05rem;
 }
+
+.section-lede a {
+  color: var(--c-red-bright);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.section-lede a:hover { color: var(--c-white); }
 
 /* ==========================================================================
    Studio Teaser (index)
@@ -971,8 +981,30 @@ body.menu-open .menu-overlay {
    About page specific
    ========================================================================== */
 
+.team-collage {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  background: var(--c-black);
+  padding-top: var(--nav-h);
+}
+
+.collage-photo {
+  position: absolute;
+  height: auto;
+  border: 1px solid var(--c-line);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.55);
+}
+
+.cp-1 { top: 50px;  left: 1%;   width: 440px; max-width: 42vw; transform: rotate(-7deg); z-index: 1; }
+.cp-2 { top: 10px;  left: 27%;  width: 500px; max-width: 46vw; transform: rotate(4deg);  z-index: 3; }
+.cp-3 { top: 330px; left: 3%;   width: 400px; max-width: 40vw; transform: rotate(-4deg); z-index: 2; }
+.cp-4 { top: 60px;  right: 1%;  width: 460px; max-width: 44vw; transform: rotate(6deg);  z-index: 2; }
+.cp-5 { top: 350px; right: 9%;  width: 400px; max-width: 38vw; transform: rotate(-6deg); z-index: 1; }
+
 .about-hero {
-  padding: 160px 0 90px;
+  padding: 90px 0;
   background: var(--c-black-soft);
   border-bottom: 1px solid var(--c-line);
   position: relative;
@@ -1137,6 +1169,27 @@ body.menu-open .menu-overlay {
 /* ==========================================================================
    Responsive
    ========================================================================== */
+
+@media (max-width: 1000px) {
+  .team-collage {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: calc(var(--nav-h) + 24px) 20px 24px;
+  }
+  .collage-photo {
+    position: static;
+    width: calc(50% - 8px);
+    max-width: none;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .collage-photo { width: 100%; }
+}
 
 @media (max-width: 900px) {
   .featured-card { grid-template-columns: 1fr; }
