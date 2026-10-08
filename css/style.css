@@ -1006,7 +1006,7 @@ body.menu-open .menu-overlay {
   width: 100%;
   overflow: hidden;
   background: var(--c-black);
-  padding: calc(var(--nav-h) + 36px) 0 56px;
+  padding: 56px 0;
 }
 
 .team-track {
@@ -1044,7 +1044,7 @@ body.menu-open .menu-overlay {
 }
 
 .about-hero {
-  padding: 90px 0;
+  padding: calc(var(--nav-h) + 56px) 0 90px;
   background: var(--c-black-soft);
   border-bottom: 1px solid var(--c-line);
   position: relative;
