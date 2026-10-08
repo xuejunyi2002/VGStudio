@@ -811,14 +811,24 @@ body.menu-open .menu-overlay {
 
 .meta-row strong { color: var(--c-white); display: block; font-weight: 700; font-size: 1rem; letter-spacing: 0.04em; margin-bottom: 4px; }
 
-.concept-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.concept-marquee {
   margin-top: 50px;
+  overflow: hidden;
+  width: 100%;
 }
 
+.concept-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  animation: concept-scroll 32s linear infinite;
+}
+
+.concept-marquee:hover .concept-track { animation-play-state: paused; }
+
 .concept-tile {
+  flex: 0 0 auto;
+  width: min(70vw, 420px);
   aspect-ratio: 4 / 3;
   background: var(--c-black-card);
   border: 1px solid var(--c-line);
@@ -830,6 +840,11 @@ body.menu-open .menu-overlay {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@keyframes concept-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 10px)); }
 }
 
 .cta-band {
@@ -1045,7 +1060,6 @@ body.menu-open .menu-overlay {
   .featured-info { padding: 28px; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .dept-grid { grid-template-columns: repeat(2, 1fr); }
-  .concept-gallery { grid-template-columns: repeat(2, 1fr); }
   .about-teaser-grid { grid-template-columns: 1fr; gap: 36px; }
   .about-teaser-photos { max-width: 420px; }
 }
@@ -1064,7 +1078,7 @@ body.menu-open .menu-overlay {
 }
 
 @media (max-width: 720px) {
-  .grid-3, .grid-2, .dept-grid, .concept-gallery { grid-template-columns: 1fr; }
+  .grid-3, .grid-2, .dept-grid { grid-template-columns: 1fr; }
   .section-pad { padding: 90px 0; }
   .stats-row { gap: 34px; }
   .values-list li { grid-template-columns: 40px 1fr; }
