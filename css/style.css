@@ -492,8 +492,6 @@ body.menu-open .menu-overlay {
    Studio Teaser (index)
    ========================================================================== */
 
-.about-teaser { overflow: hidden; }
-
 .about-teaser-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -539,18 +537,6 @@ body.menu-open .menu-overlay {
 .featured-game {
   background: var(--c-black-soft);
   overflow: hidden;
-}
-
-.featured-bg-splatter {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: -10%;
-  width: 60%;
-  background: var(--c-red);
-  opacity: 0.08;
-  clip-path: polygon(30% 0%, 100% 10%, 90% 100%, 20% 90%, 0% 40%);
-  pointer-events: none;
 }
 
 .featured-card {
