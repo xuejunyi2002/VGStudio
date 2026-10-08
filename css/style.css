@@ -1044,22 +1044,10 @@ body.menu-open .menu-overlay {
 }
 
 .about-hero {
-  padding: calc(var(--nav-h) + 56px) 0 90px;
-  background: var(--c-black-soft);
-  border-bottom: 1px solid var(--c-line);
+  padding: calc(var(--nav-h) + 56px) 0 48px;
+  background: var(--c-black);
   position: relative;
   overflow: hidden;
-}
-
-.about-hero-splash {
-  position: absolute;
-  top: -30%;
-  left: -10%;
-  width: 50%;
-  height: 160%;
-  background: var(--c-red);
-  opacity: 0.06;
-  clip-path: polygon(20% 0, 100% 15%, 80% 100%, 0 85%);
 }
 
 .about-heading {
