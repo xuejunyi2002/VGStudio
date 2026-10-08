@@ -1022,24 +1022,23 @@ body.menu-open .menu-overlay {
    itself just scales down on narrow viewports, no breakpoint needed. */
 .collage-stage {
   position: relative;
-  width: min(94vw, 760px);
-  aspect-ratio: 760 / 640;
+  width: min(96vw, 1300px);
+  aspect-ratio: 1300 / 950;
 }
 
 .collage-photo {
   position: absolute;
   height: auto;
-  box-sizing: border-box;
-  background: var(--c-white);
-  padding: 10px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.6);
 }
 
-.cp-1 { top: 0%;   left: 27%; width: 52%; transform: rotate(3deg);  z-index: 4; }
-.cp-2 { top: 36%;  left: 0%;  width: 46%; transform: rotate(-6deg); z-index: 3; }
-.cp-3 { top: 30%;  right: 0%; width: 46%; transform: rotate(5deg);  z-index: 2; }
-.cp-4 { top: 60%;  left: 24%; width: 48%; transform: rotate(-3deg); z-index: 3; }
-.cp-5 { top: 0%;   right: 2%; width: 28%; transform: rotate(8deg);  z-index: 1; }
+/* team1 (cp-1) is the dominant photo — big enough to read on its own
+   the moment the page loads, with the rest scattered around/behind it. */
+.cp-1 { top: 0%;   left: 21%; width: 58%; transform: rotate(2deg);  z-index: 4; }
+.cp-2 { top: 42%;  left: 0%;  width: 42%; transform: rotate(-6deg); z-index: 3; }
+.cp-3 { top: 36%;  right: 0%; width: 42%; transform: rotate(5deg);  z-index: 2; }
+.cp-4 { top: 64%;  left: 26%; width: 44%; transform: rotate(-3deg); z-index: 3; }
+.cp-5 { top: 0%;   right: 0%; width: 26%; transform: rotate(8deg);  z-index: 1; }
 
 .about-hero {
   padding: 90px 0;
