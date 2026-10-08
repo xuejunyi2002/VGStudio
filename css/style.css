@@ -868,6 +868,17 @@ body.menu-open .menu-overlay {
   z-index: 1;
 }
 
+.hero-credit {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  z-index: 1;
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  color: rgba(245, 241, 232, 0.4);
+}
+
 .game-scroll-cue .arrow {
   display: block;
   width: 1px;
