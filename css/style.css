@@ -1006,34 +1006,42 @@ body.menu-open .menu-overlay {
   width: 100%;
   overflow: hidden;
   background: var(--c-black);
-  padding: calc(var(--nav-h) + 36px) 20px 56px;
+  padding: calc(var(--nav-h) + 36px) 0 56px;
+}
+
+.team-track {
   display: flex;
-  justify-content: center;
+  width: max-content;
+  gap: 20px;
+  padding: 0 20px;
+  animation: team-scroll 36s linear infinite;
 }
 
-/* Everything below is positioned as a % of this capped-width stage, not
-   the viewport — so the overlap stays tight and interlocked at any
-   window size instead of spreading apart on wide screens. The stage
-   itself just scales down on narrow viewports, no breakpoint needed. */
-.collage-stage {
-  position: relative;
-  width: min(96vw, 1300px);
-  aspect-ratio: 1300 / 950;
+.team-collage:hover .team-track { animation-play-state: paused; }
+
+.team-tile {
+  flex: 0 0 auto;
+  width: min(70vw, 480px);
+  aspect-ratio: 4 / 3;
+  background: var(--c-black-card);
+  border: 1px solid var(--c-line);
+  overflow: hidden;
 }
 
-.collage-photo {
-  position: absolute;
-  height: auto;
-  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.6);
+.team-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-/* team1 (cp-1) is the dominant photo — big enough to read on its own
-   the moment the page loads, with the rest scattered around/behind it. */
-.cp-1 { top: 0%;   left: 21%; width: 58%; transform: rotate(2deg);  z-index: 4; }
-.cp-2 { top: 42%;  left: 0%;  width: 42%; transform: rotate(-6deg); z-index: 3; }
-.cp-3 { top: 36%;  right: 0%; width: 42%; transform: rotate(5deg);  z-index: 2; }
-.cp-4 { top: 64%;  left: 26%; width: 44%; transform: rotate(-3deg); z-index: 3; }
-.cp-5 { top: 0%;   right: 0%; width: 26%; transform: rotate(8deg);  z-index: 1; }
+.team-tile:hover img { transform: scale(1.08); }
+
+@keyframes team-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 10px)); }
+}
 
 .about-hero {
   padding: 90px 0;
