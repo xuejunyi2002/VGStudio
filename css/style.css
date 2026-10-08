@@ -1000,27 +1000,37 @@ body.menu-open .menu-overlay {
 .team-collage {
   position: relative;
   width: 100%;
-  height: clamp(360px, 44vw, 700px);
   overflow: hidden;
   background: var(--c-black);
-  padding-top: var(--nav-h);
+  padding: calc(var(--nav-h) + 36px) 20px 56px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Everything below is positioned as a % of this capped-width stage, not
+   the viewport — so the overlap stays tight and interlocked at any
+   window size instead of spreading apart on wide screens. The stage
+   itself just scales down on narrow viewports, no breakpoint needed. */
+.collage-stage {
+  position: relative;
+  width: min(94vw, 760px);
+  aspect-ratio: 760 / 640;
 }
 
 .collage-photo {
   position: absolute;
   height: auto;
-  border: 1px solid var(--c-line);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.55);
+  box-sizing: border-box;
+  background: var(--c-white);
+  padding: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
 }
 
-/* Fluid clamp()-based widths so the scattered/tilted arrangement scales
-   smoothly with viewport width instead of collapsing to a flat stack
-   on anything narrower than a full desktop window. */
-.cp-1 { top: 7%;  left: 1%;  width: clamp(150px, 27vw, 440px); transform: rotate(-7deg); z-index: 1; }
-.cp-2 { top: 1%;  left: 26%; width: clamp(165px, 31vw, 500px); transform: rotate(4deg);  z-index: 3; }
-.cp-3 { top: 46%; left: 3%;  width: clamp(140px, 25vw, 400px); transform: rotate(-4deg); z-index: 2; }
-.cp-4 { top: 8%;  right: 1%; width: clamp(155px, 29vw, 460px); transform: rotate(6deg);  z-index: 2; }
-.cp-5 { top: 49%; right: 8%; width: clamp(140px, 24vw, 400px); transform: rotate(-6deg); z-index: 1; }
+.cp-1 { top: 0%;   left: 27%; width: 52%; transform: rotate(3deg);  z-index: 4; }
+.cp-2 { top: 36%;  left: 0%;  width: 46%; transform: rotate(-6deg); z-index: 3; }
+.cp-3 { top: 30%;  right: 0%; width: 46%; transform: rotate(5deg);  z-index: 2; }
+.cp-4 { top: 60%;  left: 24%; width: 48%; transform: rotate(-3deg); z-index: 3; }
+.cp-5 { top: 0%;   right: 2%; width: 28%; transform: rotate(8deg);  z-index: 1; }
 
 .about-hero {
   padding: 90px 0;
@@ -1206,27 +1216,6 @@ body.menu-open .menu-overlay {
 /* ==========================================================================
    Responsive
    ========================================================================== */
-
-/* Below this, even clamp()-scaled scattered photos get too cramped to
-   read — fall back to a simple stack, keeping a slight alternating tilt
-   so it still feels like loose snapshots rather than a sterile grid. */
-@media (max-width: 480px) {
-  .team-collage {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: calc(var(--nav-h) + 24px) 20px 24px;
-  }
-  .collage-photo {
-    position: static;
-    width: 100%;
-    max-width: 360px;
-  }
-  .cp-1, .cp-3, .cp-5 { transform: rotate(-2deg); }
-  .cp-2, .cp-4 { transform: rotate(2deg); }
-}
 
 @media (max-width: 900px) {
   .featured-card { grid-template-columns: 1fr; }
