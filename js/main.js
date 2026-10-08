@@ -65,7 +65,7 @@
 
   /* ---------------- Scroll reveal ---------------- */
   function setupReveal() {
-    var items = document.querySelectorAll(".reveal");
+    var items = document.querySelectorAll(".reveal, .section-reveal");
     if (!items.length) return;
 
     if (!("IntersectionObserver" in window)) {
