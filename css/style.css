@@ -595,8 +595,17 @@ body.menu-open .menu-overlay {
    ========================================================================== */
 
 .featured-game {
-  background: var(--c-black-soft);
+  position: relative;
+  background: var(--c-black-soft) url("../assets/img/Event_Cover_Imagine_2(1).png") center 30% / cover no-repeat;
   overflow: hidden;
+}
+
+.featured-game::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--c-black-soft) 0%, rgba(20, 18, 16, 0.5) 18%, rgba(20, 18, 16, 0.5) 82%, var(--c-black-soft) 100%);
+  z-index: 0;
 }
 
 .featured-card {
@@ -604,7 +613,7 @@ body.menu-open .menu-overlay {
   z-index: 1;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
 }
 
@@ -632,7 +641,13 @@ body.menu-open .menu-overlay {
   padding: 6px 12px;
 }
 
-.featured-info { padding: 44px; }
+.featured-info {
+  padding: 44px;
+  background: var(--c-black-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .game-logo {
   font-family: var(--font-headline);
