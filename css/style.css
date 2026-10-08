@@ -538,6 +538,11 @@ body.menu-open .menu-overlay {
   transition: color 0.2s ease;
 }
 
+.text-highlight {
+  color: var(--c-red-bright);
+  font-weight: 700;
+}
+
 .section-lede a:hover { color: var(--c-white); }
 
 /* ==========================================================================
