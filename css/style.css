@@ -558,22 +558,20 @@ body.menu-open .menu-overlay {
   z-index: 1;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  align-items: stretch;
+  align-items: center;
+  width: 100%;
   background: var(--c-black-card);
-  border: 1px solid var(--c-line);
 }
 
 .featured-media {
   position: relative;
-  overflow: hidden;
   background: var(--c-black-soft);
 }
 
 .featured-media img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 .featured-media .eyebrow {
@@ -1001,7 +999,6 @@ body.menu-open .menu-overlay {
 
 @media (max-width: 900px) {
   .featured-card { grid-template-columns: 1fr; }
-  .featured-media img { aspect-ratio: 16 / 10; }
   .featured-info { padding: 28px; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .dept-grid { grid-template-columns: repeat(2, 1fr); }
