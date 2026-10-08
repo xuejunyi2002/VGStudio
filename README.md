@@ -39,7 +39,6 @@ Then open `http://localhost:8000`.
 
 ## Things to swap in before launch
 
-- Real Instagram / Discord URLs (currently placeholders in the menu overlay and footer of every page) — Steam links are already live at https://store.steampowered.com/app/5256090/Kaiju_Corp/
 - Every team member's LinkedIn button on about.html links to `#` — need each person's real LinkedIn URL
 - Every team member's avatar on about.html is a placeholder circle with a generic person icon — swap in real headshots when available (`.member-avatar` in `css/style.css`)
 
