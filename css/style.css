@@ -848,10 +848,21 @@ body.menu-open .menu-overlay {
 }
 
 .cta-band {
-  background: var(--c-red);
-  padding: 70px 0;
+  position: relative;
+  background: var(--c-red) url("../assets/img/background.jpg") center 50% / cover no-repeat;
+  padding: 110px 0;
   text-align: center;
+  overflow: hidden;
 }
+
+.cta-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,9,8,0.55) 0%, rgba(226,16,30,0.78) 60%, rgba(10,9,8,0.7) 100%);
+}
+
+.cta-band .container { position: relative; z-index: 1; }
 
 .cta-band h2 {
   font-family: var(--font-headline);
