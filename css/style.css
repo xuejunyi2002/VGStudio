@@ -1080,17 +1080,22 @@ body.menu-open .menu-overlay {
   margin: 0 0 28px;
 }
 
+/* Columns are sized to their content (not equal 1fr shares), with the
+   leftover width distributed as gaps — so the first/last card sit
+   flush with the container edges (equal left/right margins) instead
+   of leaving a dead zone to the right of a narrow column. */
 .member-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px 32px;
+  grid-template-columns: repeat(4, max-content);
+  justify-content: space-between;
+  gap: 40px 24px;
 }
 
-.member-card { text-align: left; }
+.member-card { text-align: left; width: 190px; }
 
 .member-avatar {
-  width: 128px;
-  height: 128px;
+  width: 160px;
+  height: 160px;
   margin-bottom: 16px;
   border-radius: 50%;
   background: var(--c-white);
@@ -1122,9 +1127,9 @@ body.menu-open .menu-overlay {
 }
 
 .member-avatar img {
-  width: 128px;
+  width: 160px;
   height: auto;
-  max-height: 128px;
+  max-height: 160px;
   object-fit: contain;
 }
 
@@ -1223,7 +1228,7 @@ body.menu-open .menu-overlay {
   .featured-card { grid-template-columns: 1fr; }
   .featured-info { padding: 28px; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
-  .member-grid { grid-template-columns: repeat(2, 1fr); }
+  .member-grid { grid-template-columns: repeat(2, max-content); }
   .about-teaser-grid { grid-template-columns: 1fr; gap: 36px; }
   .about-teaser-photos { max-width: 420px; }
 }
@@ -1239,11 +1244,11 @@ body.menu-open .menu-overlay {
 
 @media (max-width: 720px) {
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
-  .member-grid { grid-template-columns: repeat(2, 1fr); }
+  .member-grid { grid-template-columns: repeat(2, max-content); }
   .section-pad { padding: 90px 0; }
 }
 
 @media (max-width: 480px) {
   .topbar-mark { display: none; }
-  .member-grid { grid-template-columns: 1fr; }
+  .member-grid { grid-template-columns: 1fr; justify-content: start; }
 }
