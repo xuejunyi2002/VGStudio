@@ -538,8 +538,6 @@ body.menu-open .menu-overlay {
 
 .featured-game {
   background: var(--c-black-soft);
-  border-top: 1px solid var(--c-line);
-  border-bottom: 1px solid var(--c-line);
   overflow: hidden;
 }
 
