@@ -1118,17 +1118,22 @@ body.menu-open .menu-overlay {
 .member-title { color: var(--c-gray); font-size: 0.8rem; margin: 0 0 8px; }
 
 .member-linkedin {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--c-red);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.55;
-  transition: opacity 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.member-linkedin svg { width: 15px; height: 15px; fill: var(--c-gray); transition: fill 0.2s ease; }
+.member-linkedin svg { width: 15px; height: 15px; fill: var(--c-white); }
 
-.member-linkedin:hover { opacity: 1; }
-.member-linkedin:hover svg { fill: var(--c-red-bright); }
+.member-linkedin:hover {
+  background: var(--c-red-bright);
+  transform: translateY(-2px);
+}
 
 /* ==========================================================================
    Footer
