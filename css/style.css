@@ -1081,18 +1081,19 @@ body.menu-open .menu-overlay {
 }
 
 .member-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 36px 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 32px;
 }
 
-.member-card { text-align: left; max-width: 150px; }
+.member-card { text-align: left; }
 
 .member-avatar {
-  width: 88px;
-  height: 88px;
-  margin-bottom: 14px;
+  width: 128px;
+  height: 128px;
+  margin-bottom: 16px;
   border-radius: 50%;
+  background: var(--c-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1101,7 +1102,7 @@ body.menu-open .menu-overlay {
 
 .member-avatar span {
   font-family: var(--font-headline);
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: var(--c-black);
 }
 
@@ -1110,14 +1111,6 @@ body.menu-open .menu-overlay {
   height: 100%;
   object-fit: cover;
 }
-
-/* Cycle through a small accent palette per card so the row reads as
-   distinct people rather than identical placeholder tiles. */
-.member-card:nth-child(5n+1) .member-avatar { background: var(--c-red-bright); }
-.member-card:nth-child(5n+2) .member-avatar { background: #e8c547; }
-.member-card:nth-child(5n+3) .member-avatar { background: #5fb3a3; }
-.member-card:nth-child(5n+4) .member-avatar { background: #e8956b; }
-.member-card:nth-child(5n+5) .member-avatar { background: #8f8fd8; }
 
 .member-card h4 {
   font-family: var(--font-headline);
@@ -1214,6 +1207,7 @@ body.menu-open .menu-overlay {
   .featured-card { grid-template-columns: 1fr; }
   .featured-info { padding: 28px; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .member-grid { grid-template-columns: repeat(2, 1fr); }
   .about-teaser-grid { grid-template-columns: 1fr; gap: 36px; }
   .about-teaser-photos { max-width: 420px; }
 }
@@ -1227,11 +1221,13 @@ body.menu-open .menu-overlay {
   .about-teaser-photos .photo-b { margin: -40px 0 0 38%; }
 }
 
-@media (max-width: 480px) {
-  .topbar-mark { display: none; }
-}
-
 @media (max-width: 720px) {
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .member-grid { grid-template-columns: repeat(2, 1fr); }
   .section-pad { padding: 90px 0; }
+}
+
+@media (max-width: 480px) {
+  .topbar-mark { display: none; }
+  .member-grid { grid-template-columns: 1fr; }
 }
