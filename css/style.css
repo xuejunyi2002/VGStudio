@@ -585,7 +585,6 @@ body.menu-open .menu-overlay {
   grid-template-columns: 1.1fr 1fr;
   align-items: center;
   width: 100%;
-  background: var(--c-black-card);
 }
 
 .featured-media {
