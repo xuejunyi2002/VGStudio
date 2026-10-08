@@ -110,7 +110,7 @@
   /* ---------------- Photo fallback ---------------- */
   // Hides any content photo that fails to load instead of leaving a broken-image icon.
   function setupPhotoFallback() {
-    document.querySelectorAll(".about-teaser-photos img, .featured-media img").forEach(function (img) {
+    document.querySelectorAll(".about-teaser-photos img, .featured-media img, .concept-tile img, .game-hero-logo-img").forEach(function (img) {
       function hide() { img.style.display = "none"; }
       if (img.complete && img.naturalWidth === 0) hide();
       else img.addEventListener("error", hide);
