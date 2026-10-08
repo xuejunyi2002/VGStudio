@@ -743,6 +743,21 @@ body.menu-open .menu-overlay {
    Game page specific
    ========================================================================== */
 
+#overview {
+  position: relative;
+  background: var(--c-black) url("../assets/img/background.jpg") center 16% / cover no-repeat;
+  overflow: hidden;
+}
+
+#overview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--c-black) 0%, rgba(10,9,8,0.92) 38%, rgba(10,9,8,0.55) 68%, rgba(10,9,8,0.25) 100%);
+}
+
+#overview .container { position: relative; z-index: 1; }
+
 .game-hero {
   position: relative;
   min-height: 100vh;
