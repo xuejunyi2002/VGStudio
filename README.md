@@ -39,9 +39,6 @@ Then open `http://localhost:8000`.
 
 ## Things to swap in before launch
 
-- Every team member's LinkedIn button on about.html links to `#` — need each person's real LinkedIn URL
-- Every team member's avatar on about.html is a placeholder circle with a generic person icon — swap in real headshots when available (`.member-avatar` in `css/style.css`)
-
 If a background video clip is ever replaced, regenerate both transcodes from the new source, e.g.:
 
 ```
